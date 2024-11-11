@@ -1,21 +1,33 @@
 
 body {
-    font-family:Arial, Helvetica, sans-serif;
+    color: #121212;
+    background: radial-gradient(circle, #e6e6e6 50%, #cccccc 100%);
+    font-family: "Raleway", sans-serif;
 }
 
 h1 {
-    font-size: 48px;
-    margin: 36px;
+    font-size: 32px;
+    margin: 48px 20px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 800;
+    text-align: center;
+    color: #383838;
+
+}
+
+h2, h3, p {
+    font-weight: 500;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 26px;
     margin: 18px;
+    color: #555;
 }
 
 h3 {
-    font-size: 26px;
     color: #232323b2;
+    font-size: 22px;
     margin: 8px;
 }
 
