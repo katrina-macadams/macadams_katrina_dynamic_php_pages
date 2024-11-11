@@ -2,14 +2,7 @@
 img, embed, object, video, picture {
     max-width: 100%; 
   }
-/* BOX MODEL   */
   
-/* CSS RESET */
-  
-  body, p, h1, h2, h3, h4, h5 {
-     margin: 0px; 
-     padding: 0px;
-  }
   
  /* UTLITY  */
   
