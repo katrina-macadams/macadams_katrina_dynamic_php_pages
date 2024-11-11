@@ -4,7 +4,8 @@
 require_once('includes/connect.php');
 
 $query = 'SELECT * FROM employees, jobs WHERE job_id = jobs.id;';
-$results = mysqli_query($connect, $query);
+
+$results = mysqli_query($connect,$query);
 ?>
 
 <head>
