@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -14,60 +12,46 @@ $results = mysqli_query($connect,$query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/grid.css">
-    <title>Employees Dynamic PHP Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <title>Employee Profiles</title>
 </head>
+
 <body>
 
-    <h1>Springfield Employee's</h1>
+<main>
+    <h1>Springfield Employee Profiles</h1>
 
-<?php
-    while($row = mysqli_fetch_array($results)) {
-
-    echo '<section class="grid-con thumb-box">
-        <h2 class="hidden">Employees</h2>
-        <div class="l-col-span-full thumb-card">
-            <img src="images/';
-            
-            echo $row['image'];
-            
-    echo '" alt="';
-    
-    echo $row ['fname'];
-    
-    echo '">
-        </div>
-    </section>
-
-    <section class="grid-con card-box">
-        <h2 class="col-span-full"></h2>
-        <div class="col-span-full card-holder">
-            <div class="card">
-                <img src="images/';
-                
-    echo $row['thumb'];
-    
-    echo'" alt="';
-    
-    echo $row ['fname'];
-    
-    echo '">
-                <h3>'; 
-                echo $row ['fname'];
-                echo " "; // add space
-                echo $row ['lname'];
-                echo '</h3>
-                <p>';
-                echo $row ['title'];
-                echo '</p>
+    <?php while ($row = mysqli_fetch_array($results)) { ?>
+        <!-- Thumbnail Section -->
+        <section class="thumb-box">
+            <div class="thumb-card">
+                <img class="thumb-img" src="images/<?php echo $row['thumb']; ?>" alt="<?php echo $row['fname']; ?>">
+                <div>
+                    <h3><?php echo $row['fname'] . " " . $row['lname']; ?></h3>
+                    <p><?php echo $row['title']; ?></p>
+                </div>
             </div>
-        </div>
-    </section>';
+        </section>
 
-    }
-    ?>
+        <!-- Full Card Section -->
+        <section class="card-box">
+            <div class="card-holder">
+                <div class="card">
+                    <img class="card-image" src="images/<?php echo $row['image']; ?>" alt="<?php echo $row['fname']; ?>">
+                    <h3><?php echo $row['fname'] . " " . $row['lname']; ?></h3>
+                    <p><?php echo $row['title']; ?></p>
+                    <p class="bio">
+                    <?php echo $row['bio']; ?>
+                    </p>
+                </div>
+            </div>
+        </section>
+    <?php 
+    
+    }?>
+    
+</main>
 
 </body>
 </html>
-
-<!--  http://localhost:8888/macadams_katrina_dynamic_php_pages/index.php -->
